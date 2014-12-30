@@ -19,7 +19,7 @@ develop-eggs/
 dist/
 downloads/
 eggs/
-lib/
+service/**/lib/
 lib64/
 sdist/
 var/
