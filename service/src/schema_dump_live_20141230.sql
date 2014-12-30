@@ -10,6 +10,96 @@ SET escape_string_warning = off;
 
 SET search_path = public, pg_catalog;
 
+ALTER TABLE ONLY public.ride_offers DROP CONSTRAINT ride_offers_route_id_fkey;
+ALTER TABLE ONLY public.public_transport DROP CONSTRAINT public_transport_route_id_fkey;
+ALTER TABLE ONLY public.users DROP CONSTRAINT users_pkey;
+ALTER TABLE ONLY public.user_registration DROP CONSTRAINT user_registration_pkey;
+ALTER TABLE ONLY public.user_number DROP CONSTRAINT user_numbers_pkey;
+ALTER TABLE ONLY public.translation DROP CONSTRAINT translation_pkey;
+ALTER TABLE ONLY public.taxi DROP CONSTRAINT taxi_pkey;
+ALTER TABLE ONLY public.status_log DROP CONSTRAINT status_log_pkey;
+ALTER TABLE ONLY public.sms DROP CONSTRAINT sms_pkey;
+ALTER TABLE ONLY public.routes DROP CONSTRAINT routes_pkey;
+ALTER TABLE ONLY public.route_pickuppoint DROP CONSTRAINT route_pickuppoint_pkey;
+ALTER TABLE ONLY public.ride_requests DROP CONSTRAINT ride_requests_pkey;
+ALTER TABLE ONLY public.ride_offers DROP CONSTRAINT ride_offers_pkey;
+ALTER TABLE ONLY public.public_transport DROP CONSTRAINT public_transport_pkey;
+ALTER TABLE ONLY public.pickuppoint DROP CONSTRAINT pickuppoint_pkey;
+ALTER TABLE ONLY public.location DROP CONSTRAINT location_pkey;
+ALTER TABLE ONLY public.error_log DROP CONSTRAINT error_log_pkey;
+ALTER TABLE ONLY public.emailsuffix DROP CONSTRAINT emailsuffix_pkey;
+ALTER TABLE ONLY public.company DROP CONSTRAINT companies_pkey;
+ALTER TABLE public.users ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.user_registration ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.user_number ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.translation ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.taxi ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.status_log ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.sms ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.route_pickuppoint ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.ride_requests ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.ride_offers ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.public_transport ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.pickuppoint ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.location ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.error_log ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.emailsuffix ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE public.company ALTER COLUMN id DROP DEFAULT;
+DROP SEQUENCE public.users_id_seq;
+DROP TABLE public.users;
+DROP SEQUENCE public.user_registration_seq;
+DROP SEQUENCE public.user_registration_id_seq;
+DROP TABLE public.user_registration;
+DROP SEQUENCE public.user_numbers_id_seq;
+DROP TABLE public.user_number;
+DROP SEQUENCE public.translation_id_seq;
+DROP TABLE public.translation;
+DROP SEQUENCE public.taxi_id_seq;
+DROP TABLE public.taxi;
+DROP SEQUENCE public.status_log_id_seq;
+DROP TABLE public.status_log;
+DROP SEQUENCE public.sms_id_seq;
+DROP TABLE public.sms;
+DROP TABLE public.routes;
+DROP SEQUENCE public.routes_seq;
+DROP SEQUENCE public.route_pickuppoint_id_seq;
+DROP TABLE public.route_pickuppoint;
+DROP SEQUENCE public.ride_requests_id_seq;
+DROP TABLE public.ride_requests;
+DROP SEQUENCE public.ride_offers_id_seq;
+DROP TABLE public.ride_offers;
+DROP SEQUENCE public.public_transport_id_seq;
+DROP TABLE public.public_transport;
+DROP SEQUENCE public.pickuppoint_location_id_seq;
+DROP SEQUENCE public.pickuppoint_id_seq;
+DROP TABLE public.pickuppoint;
+DROP SEQUENCE public.location_id_seq;
+DROP TABLE public.location;
+DROP SEQUENCE public.error_log_id_seq;
+DROP TABLE public.error_log;
+DROP SEQUENCE public.emailsuffix_id_seq;
+DROP TABLE public.emailsuffix;
+DROP SEQUENCE public.companies_id_seq;
+DROP TABLE public.company;
+DROP TYPE public.enum_route_status;
+DROP TYPE public.enum_ride_status;
+DROP SCHEMA public;
+--
+-- Name: public; Type: SCHEMA; Schema: -; Owner: -
+--
+
+CREATE SCHEMA public;
+
+
+--
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
+
+SET search_path = public, pg_catalog;
+
 --
 -- Name: enum_ride_status; Type: TYPE; Schema: public; Owner: -
 --
