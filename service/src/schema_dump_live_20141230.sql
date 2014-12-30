@@ -83,22 +83,7 @@ DROP SEQUENCE public.companies_id_seq;
 DROP TABLE public.company;
 DROP TYPE public.enum_route_status;
 DROP TYPE public.enum_ride_status;
-DROP SCHEMA public;
---
--- Name: public; Type: SCHEMA; Schema: -; Owner: -
---
 
-CREATE SCHEMA public;
-
-
---
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON SCHEMA public IS 'standard public schema';
-
-
-SET search_path = public, pg_catalog;
 
 --
 -- Name: enum_ride_status; Type: TYPE; Schema: public; Owner: -
